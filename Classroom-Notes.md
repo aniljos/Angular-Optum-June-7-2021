@@ -8,3 +8,9 @@
 3. Start Project: ng serve --open
 
 
+### Decorators
+
+1. ngModule, Component
+2. TypeScript: Similar Annotation in Java, Attributes in .Net
+3. Metadata
+
