@@ -1,0 +1,30 @@
+<h3>DataBinding Examples</h3>
+
+<div>
+    Name: {{name | uppercase}}
+</div>
+
+<div>
+    Expression :  {{5 + 6}}
+    Expression :  {{"The name is " + name}}
+</div>
+<br/>
+<div>
+    Count: <input type="number" [value]="count"/>
+    <p>{{count}}</p>
+</div>
+<br/>
+<button (click)="increment($event)">Inc</button>
+
+<br/>
+
+<div>
+    Message: <input [(ngModel)]="message"/>
+    <p>{{message}}</p>
+</div>
+
+<br>
+<div>
+    Count: <input type="number" 
+                [value]="count" (input)="count= $event.target.value"/>
+            </div>
