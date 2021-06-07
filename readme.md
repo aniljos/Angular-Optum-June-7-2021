@@ -1,1 +1,1 @@
-## Angualar Training for Optum
+## Angular Training for Optum
