@@ -1,0 +1,26 @@
+<h3>Edit Product: {{product.id}}</h3>
+
+<div>
+    <p>Name</p>
+    <div>
+        <input class="form-control" [(ngModel)]="current.name"/>
+    </div>
+</div>
+<div>
+    <p>Price</p>
+    <div>
+        <input type="number" class="form-control" [(ngModel)]="current.price"/>
+    </div>
+</div>
+<div>
+    <p>Category</p>
+    <div>
+        <input class="form-control" [(ngModel)]="current.category"/>
+    </div>
+</div>
+<br/>
+<div>
+    <button class="btn btn-success" (click)="save()">Save</button>&nbsp;
+    <button class="btn btn-warning" (click)="cancel()">Cancel</button>
+</div>
+<br/><br/><br/>

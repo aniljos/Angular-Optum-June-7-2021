@@ -1,0 +1,44 @@
+<h4>List of Products</h4>
+
+<div>
+    <input class="form-control" type="search" placeholder="Search" [(ngModel)]="searchKey"/>
+    <br/>
+    <p [hidden]="!searchKey" class="alert alert-primary">
+        Search Results for {{searchKey}} 
+    </p>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Product ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- for of (ES6) -->
+        <tr *ngFor="let item of data | prodFilter : searchKey; index as i; odd as odd; even as even" [ngClass]="{oddCls: odd, evenCls: even}">
+
+            <td>{{i}}</td>
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.price | currency : 'Rs.'}}</td>
+            <td>{{item.category}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="delete(item);">Delete</button> &nbsp;
+                <button class="btn btn-primary" (click)="edit(item)">Edit</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
+<div *ngIf="selectedProduct">
+    <app-edit-product 
+        [product]="selectedProduct"
+        (saved)="editUpdate($event)"
+        (cancelled)="editCancelled($event)"></app-edit-product>
+</div>

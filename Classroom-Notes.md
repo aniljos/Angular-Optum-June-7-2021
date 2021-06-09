@@ -10,7 +10,15 @@
 
 ### Decorators
 
-1. ngModule, Component
-2. TypeScript: Similar Annotation in Java, Attributes in .Net
+1. ngModule, Component, Directive, Pipes
+2. TypeScript: Similar to Annotation in Java, Attributes in .Net
 3. Metadata
+
+### Routes
+
+1. Child Routes
+2. Lazy Loading of Modules
+3. Router Guards
+4. Navigation Events
+5. Route Parameters
 
