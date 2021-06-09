@@ -1,0 +1,20 @@
+<h3>Login</h3>
+
+<div [formGroup]="formGroup">
+    <div *ngIf="message" class="alert alert-danger">
+        {{message}}
+    </div>
+    <div>
+        <p>Name</p>
+        <input class="form-control" formControlName="name"/>
+    </div>
+    <div>
+        <p>Password</p>
+        <input type="password" class="form-control" formControlName="pwd"/>
+    </div>
+
+    <br />
+    <div>
+        <button class="btn btn-primary" [disabled]="formGroup.invalid" (click)="login();">Login</button>
+    </div>
+</div>
