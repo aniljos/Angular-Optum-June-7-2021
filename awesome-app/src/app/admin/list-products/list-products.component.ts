@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import {Product} from '../../model/product';
 
 @Component({
@@ -17,7 +18,8 @@ export class ListProductsComponent implements OnInit {
   public searchKey: string;
 
   constructor(private httpClient: HttpClient) { 
-    this.url = "http://localhost:9000/products";
+    //this.url = "http://localhost:9000/products";
+    this.url = environment.products;
   }
 
   ngOnInit(): void {

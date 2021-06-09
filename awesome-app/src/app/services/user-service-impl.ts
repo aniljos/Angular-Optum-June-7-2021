@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { environment } from "src/environments/environment";
 import { Token, UserService } from "./user-service";
 
 @Injectable()
@@ -13,7 +14,8 @@ export class UserServiceImpl extends UserService{
    
     validate(name: string, password: string): Promise<Token> {
         
-        const url = "http://localhost:9000/login";
+        //const url = "http://localhost:9000/login";
+        const url = environment.login;
         
         return new Promise((resolve, reject) => {
 

@@ -19,6 +19,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { appReducer } from './ngrx/app-reducer';
+import { UiLibModule, UiLibComponent } from 'ui-lib';
 
 // http://localhost:4200/
 // http://localhost:4200/binding
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path: "binding", component: DatabindingComponent},
   {path: "login", component: LoginComponent},
   {path: "search", component: SearchComponent},
+  {path: "uilib", component: UiLibComponent},
   {path: "products", loadChildren: () => import('./admin/admin.module').then(item => item.AdminModule), 
                                     canActivate: [AuthGuardService]},
   {path: "", redirectTo: "/home", pathMatch: "full"},
@@ -56,7 +58,8 @@ const routes: Routes = [
     GadgetStoreModule,
     HttpClientModule,
     StoreModule.forRoot({appState: appReducer}),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    UiLibModule
   ],
   providers: [{provide: UserService, useClass: UserServiceImpl}],
   bootstrap: [AppComponent]
