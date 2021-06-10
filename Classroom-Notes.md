@@ -92,12 +92,11 @@ exports.config = {
     }));
   }
 };
-
+```
 
  7. Create a tsconfig.json in the e2e folder and add the below config
  
-
-```
+``` json
 
 {
   "extends": "../tsconfig.json",
@@ -117,11 +116,13 @@ exports.config = {
 
 ### Storybook(installation for Angular 12)
 
-1. npx sb upgrade --prerelease
-2. npm install @storybook/builder-webpack5@next @storybook/manager-webpack5@next --save-dev
-3. Modify .storybook/main.ts and add the code below
+1. npx sb init
+2. npx sb upgrade --prerelease
+3. npm install @storybook/builder-webpack5@next @storybook/manager-webpack5@next --save-dev
+4. Modify .storybook/main.ts and add the code below
 ```javascript
   core: { 
     builder: 'webpack5'
   }
 ```
+5. To run: npm run storybook
