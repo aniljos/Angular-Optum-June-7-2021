@@ -28,11 +28,13 @@
 2. Parent-Child
 3. Redux-ngRX  --> Reactive Programming
 
-### e2e
+### e2e protractor for Angular 12
 
-1. install libraries: protractor, jasmine-spec-reporter, ts-node
-2. In angular.json provide the e2e configuration
-3. "e2e": {
+1. Install libraries: protractor, jasmine-spec-reporter, ts-node
+2. In angular.json provide the e2e configuration in the "architect" section of the "awesome-app" project
+
+``` json  
+ "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
@@ -47,16 +49,18 @@
             }
           }
         }
+```
 4. Create a e2e folder in application root.
 5. Create a protractor.conf.js in the e2e folder
 6. Add the configuration to protractor.conf.js
-   // @ts-check
+```javascript
+// @ts-check
 // Protractor configuration file, see link for more information
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
 const { SpecReporter, StacktraceOption } = require('jasmine-spec-reporter');
 
-```javascript
+
 /**
  * @type { import("protractor").Config }
  */
@@ -90,10 +94,15 @@ exports.config = {
 };
 ```
 
-7. Create a src folder in e2e folder
+7. Create a src folder in e2e folder and add the .spec files
 
-### Storybook
+### Storybook(installation for Angular 12)
 
 1. npx sb upgrade --prerelease
 2. npm install @storybook/builder-webpack5@next @storybook/manager-webpack5@next --save-dev
-3. .storybook/main.ts:  core: { builder: 'webpack5'}
+3. Modify .storybook/main.ts and add the code below
+```javascript
+  core: { 
+    builder: 'webpack5'
+  }
+```
