@@ -56,6 +56,7 @@
 
 const { SpecReporter, StacktraceOption } = require('jasmine-spec-reporter');
 
+```javascript
 /**
  * @type { import("protractor").Config }
  */
@@ -87,6 +88,8 @@ exports.config = {
     }));
   }
 };
+```
+
 7. Create a src folder in e2e folder
 
 ### Storybook
