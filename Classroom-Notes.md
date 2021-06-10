@@ -92,9 +92,25 @@ exports.config = {
     }));
   }
 };
+
+
+ 7. Create a tsconfig.json in the e2e folder and add the below config
+   ```json
+    {
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+      "outDir": "../out-tsc/e2e",
+      "module": "commonjs",
+      "target": "es2018",
+      "types": [
+        "jasmine",
+        "node"
+      ]
+    }
+  }
 ```
 
-7. Create a src folder in e2e folder and add the .spec files
+8. Create a src folder in e2e folder and add the .spec files
 
 ### Storybook(installation for Angular 12)
 
