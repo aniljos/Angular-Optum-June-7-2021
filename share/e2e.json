@@ -1,0 +1,15 @@
+"e2e": {
+    "builder": "@angular-devkit/build-angular:protractor",
+    "options": {
+      "protractorConfig": "e2e/protractor.conf.js",
+      "devServerTarget": "awesome-app:serve"
+    },
+    "configurations": {
+      "production": {
+        "devServerTarget": "awesome-app:serve:production"
+      },
+      "e2e": {
+        "devServerTarget": "awesome-app:serve:e2e"
+      }
+    }
+  }
