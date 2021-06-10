@@ -30,7 +30,7 @@
 
 ### e2e protractor for Angular 12
 
-1. Install libraries: protractor, jasmine-spec-reporter, ts-node
+1. Install libraries: npm install protractor, jasmine-spec-reporter, ts-node --save-dev
 2. In angular.json provide the e2e configuration in the "architect" section of the "awesome-app" project
 
 ``` json  
